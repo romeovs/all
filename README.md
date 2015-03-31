@@ -46,6 +46,11 @@ Some facts:
     all(Promise.resolve(1)).then(res => /* res === 1*/);
     ```
 
+### Rejection
+When one of the promises in the nested structure rejects, the promise returned
+by `all` also rejects immediatly.  Other promises in the structure will keep on
+working, as there might be other clients listening to them.
+
 ## Installation
 
 To install `all.js`:
