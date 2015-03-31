@@ -19,7 +19,7 @@ all(nested)
     // a: 'a'
     // , b: [1, 'b', 3]
     // , c: 'c'
-    // };
+    // }
   });
 ```
 The same will work if the argument is an array.
@@ -35,18 +35,20 @@ in the structure.
 
 Some facts:
 
- - simple values can be entered as argument:
+ - simple values can be entered as argument.
+
     ```js
     all(1).then(res => /* res === 1*/);
     ```
- - promises too:
+ - single promises can be entered as argument.
+
     ```js
     all(Promise.resolve(1)).then(res => /* res === 1*/);
     ```
 
 ## Installation
 
-To install all, just do:
+To install `all.js`:
 ```sh
 npm install romeovs/all
 ```
