@@ -1,0 +1,21 @@
+{
+  "name": "all",
+  "version": "1.0.0",
+  "description": "Create a promise from any javascript collection/map that contains Promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babelhook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romeovs/all.git"
+  },
+  "author": "Romeo Van Snick <romeovs@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^4.7.16",
+    "chai": "^2.2.0",
+    "chai-as-promised": "^4.3.0",
+    "mocha": "^2.2.1"
+  }
+}
