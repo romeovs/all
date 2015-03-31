@@ -55,6 +55,6 @@ working, as there might be other clients listening to them.
 
 To install `all.js`:
 ```sh
-npm install romeovs/all
+npm install --save romeovs/all
 ```
 
