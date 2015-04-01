@@ -4,7 +4,8 @@
   "description": "Create a promise from any javascript collection/map that contains Promises",
   "main": "build.js",
   "scripts": {
-    "prepublish": "babel index.js > build.js",
+    "compile": "babel index.js -o build.js",
+    "prepublish": "npm run compile",
     "test": "mocha --require babelhook"
   },
   "repository": {
