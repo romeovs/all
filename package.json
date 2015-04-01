@@ -16,6 +16,7 @@
     "babel": "^4.7.16",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
+    "immutable": "^3.7.1",
     "mocha": "^2.2.1"
   }
 }

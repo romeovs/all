@@ -2,8 +2,11 @@
 
 var isObject = function(val) {
   return val && '[object Object]' === val.toString();
-}
+};
 
+var isImmutable = function(val) {
+  return val.asMutable !== undefined;
+};
 
 // resolves all promises in object
 var inObject = function (object, rerealise) {
@@ -39,10 +42,51 @@ var inArray = function (array, rerealise) {
   return Promise.all(array.map(realise));
 };
 
+var inImmutable = function(imm, rerealise) {
+  return new Promise(function(resolve, reject) {
+    var pending = imm.size;
+    var results = imm.clear();
+
+    if ( pending === 0 ) {
+      resolve(imm);
+    }
+
+    var setter = function(key, val) {
+      if ( results.set ) {
+        return results.set(key, val);
+      } else if ( results.add ) {
+        return results.add(val);
+      } else {
+        reject(new Error(`unknown adder for Immutable of type ${typeof imm}`));
+        return;
+      }
+    };
+
+    imm
+      .forEach(function(val, key) {
+        realise(val)
+          .then(function(res) {
+            results = setter(key, res);
+            if ( --pending === 0 ) {
+              resolve(results);
+            }
+          })
+          .catch(function(err) {
+            reject(err);
+          });
+      });
+  });
+};
+
 var realise = function(thing, rerealise = false) {
-  if ( thing instanceof Array ) {
+  if ( thing === undefined || thing === null ) {
+    return Promise.resolve(thing);
+  } else if ( thing instanceof Array ) {
     // resolve all array elements
     return inArray(thing, rerealise);
+  } else if ( isImmutable(thing) ) {
+    // resolve immutable.js things
+    return inImmutable(thing);
   } else if ( isObject(thing) ) {
     if ( thing instanceof Promise ) {
       // thing already is a promise
