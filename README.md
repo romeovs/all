@@ -58,6 +58,24 @@ To install `all`:
 npm install --save romeovs/all
 ```
 
+## Immutable.js
+`all` has support for most [`Immutable.js`](https://github.com/facebook/immutable-js) 
+data structures.  These have been implemented:
+
+  - `List`
+  - `Set`
+  - `OrderedSet`
+  - `Map`
+  - `OrderedMap`
+
+Other structures (where iterating trough them makes sense) are coming soon!
+Also some work is needed for the `Ordered` structures to keep the order correct.
+
+Note that `all` does not have a dependency on the `immutable` package itself,
+it just knows to deal with these values by detecting them trough duck-typing and
+knowing how to iterate trough them.  Facebook has done a great job on keeping
+the API simple and general!
+
 ## Todo
 
   - add support for resolving promises that are returned from promises.
@@ -70,8 +88,6 @@ npm install --save romeovs/all
     should resolve to `[1, 1, 1,]` instead of `[1, Promise, 1]`.
 
   - use better generative testing framework
-  - support [`Immutable.js`](https://github.com/facebook/immutable-js)
-    structures.
   - add test coverage
   - add support for custom types
 
