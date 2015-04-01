@@ -72,5 +72,6 @@ npm install --save romeovs/all
   - use better generative testing framework
   - support [`Immutable.js`](https://github.com/facebook/immutable-js)
     structures.
-
+  - add test coverage
+  - add support for custom types
 
