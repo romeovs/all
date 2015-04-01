@@ -1,5 +1,5 @@
-# all.js
-`all.js` provides a simple utility to create a promise
+# all
+`all` provides a simple utility to create a promise
 from a nested structure that contains promises.
 
 For example:
@@ -25,7 +25,7 @@ all(nested)
 The same will work if the argument is an array.
 
 ## Usage
-`all.js` exposes one function.  This function return a single promise
+`all` exposes one function.  This function return a single promise
 that resolves when all promises in the argument are resolved.  The promise
 will be rejected when one of the promises in the arguments is rejected, with
 the reason of this rejection.
@@ -53,8 +53,10 @@ working, as there might be other clients listening to them.
 
 ## Installation
 
-To install `all.js`:
+To install `all`:
 ```sh
 npm install --save romeovs/all
 ```
+
+
 
