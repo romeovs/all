@@ -58,6 +58,15 @@ To install `all`:
 npm install --save romeovs/all
 ```
 
+The module is written in ES6-compliant syntax that needs to
+be transpiled, you need to have [`babel`](https://babeljs.io) installed
+on your system before installing it.  If you don't have it, the above command
+will fail.  To fix this, do:
+
+```sh
+npm install --global babel
+```
+
 ## Immutable.js
 `all` has support for most [`Immutable.js`](https://github.com/facebook/immutable-js) 
 data structures.  These have been implemented:
