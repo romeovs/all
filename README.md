@@ -58,5 +58,19 @@ To install `all`:
 npm install --save romeovs/all
 ```
 
+## Todo
+
+  - add support for resolving promises that are returned from promises.
+    For example:
+
+    ```js
+    all(Promise.resolve([1, Promise.resolve(2), 2]));
+    ```
+
+    should resolve to `[1, 1, 1,]` instead of `[1, Promise, 1]`.
+
+  - use better generative testing framework
+  - support [`Immutable.js`](https://github.com/facebook/immutable-js)
+    structures.
 
 
