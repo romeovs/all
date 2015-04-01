@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "compile": "babel index.js -o build.js",
-    "prepublish": "npm run compile",
+    "postinstall": "npm run compile",
     "test": "mocha --require babelhook"
   },
   "repository": {
