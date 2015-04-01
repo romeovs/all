@@ -10,6 +10,10 @@
     "type": "git",
     "url": "https://github.com/romeovs/all.git"
   },
+  "keywords": [
+    "promise"
+  , "immutable"
+  ],
   "author": "Romeo Van Snick <romeovs@gmail.com",
   "license": "ISC",
   "devDependencies": {
