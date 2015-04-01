@@ -34,13 +34,37 @@ describe('values', function() {
       .and.notify(done);
   });
 
-  it('should resolve bools to bools', function(done) {
+  it('should resolve true to true', function(done) {
     expect(all(true)).to
       .eventually.be.a('boolean')
       .and.eventually.equal(true)
       .and.notify(done);
   });
+
+  it('should resolve false to false', function(done) {
+    expect(all(false)).to
+      .eventually.be.a('boolean')
+      .and.eventually.equal(false)
+      .and.notify(done);
+  });
 });
+
+describe('non-values', function() {
+  it('should resolve undefined to undefined', function(done) {
+    expect(all(undefined)).to
+      .eventually.be.an('undefined')
+      .and.eventually.equal(undefined)
+      .and.notify(done);
+  });
+
+  it('should resolve null to null', function(done) {
+    expect(all(null)).to
+      .eventually.be.a('null')
+      .and.eventually.equal(null)
+      .and.notify(done);
+  });
+});
+
 
 describe('arrays', function() {
   it('should resolve all array elements', function(done) {
