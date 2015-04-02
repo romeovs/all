@@ -40,23 +40,11 @@ var mapLike = function(name) {
       var value = Immutable[name](mutval);
       var prom = Immutable[name](mutprom);
 
-      all(prom)
-        .then(function(res) {
-          if ( !res instanceof Immutable[name] ) {
-            return done(new Error(`should return ${name}: ${res}`));
-          }
-
-          if ( !Immutable.is(value, res) ) {
-            console.log('expected', value);
-            console.log('got', res);
-            return done(new Error('should return correct values'));
-          }
-
-          return done();
-        })
-        .catch(function(err) {
-          done(err);
-        });
+      expect(all(prom)).to
+        .to.be.fulfilled
+        .and.eventually.be.an.instanceof(Immutable[name])
+        .and.eventually.satisfy(function(res) { return Immutable.is(res, value) })
+        .and.notify(done);
     });
   });
 
