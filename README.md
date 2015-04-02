@@ -103,6 +103,7 @@ A hook looks like this:
     return Promise.resolve(thing);
   }
 }
+```
 
 Check the hook I wrote in [test for
 hooks](https://github.com/romeovs/all/blob/master/test/hooks.js#L11-L24)
