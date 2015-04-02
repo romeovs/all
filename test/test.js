@@ -5,7 +5,7 @@ import cas  from 'chai-as-promised'
 chai.use(cas);
 var expect = chai.expect;
 
-import all from '../'
+import all from '../src'
 
 var mkPromise = function(val) {
   return Promise.resolve(val);
