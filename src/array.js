@@ -1,6 +1,3 @@
-'use strict';
-import realise from './'
-
 export default {
   // wether or not something is an array
   check(thing) {

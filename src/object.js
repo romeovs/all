@@ -1,7 +1,3 @@
-'use strict';
-import realise from './'
-
-
 // wether or not something is a plain object
 var isObject = function(val) {
   return val && '[object Object]' === val.toString();

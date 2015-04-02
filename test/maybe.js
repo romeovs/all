@@ -1,5 +1,3 @@
-'use strict';
-
 export class Maybe { };
 
 class Nothing extends Maybe {

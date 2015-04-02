@@ -1,4 +1,3 @@
-'use strict';
 import expect from './instrument'
 import all    from '../build'
 

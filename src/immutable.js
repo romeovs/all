@@ -1,6 +1,3 @@
-'use strict';
-import realise from './'
-
 // check wether something is an immutable;
 var isImmutable = function(val) {
   return val && val.asMutable !== undefined;

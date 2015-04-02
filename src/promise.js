@@ -1,6 +1,3 @@
-'use strict';
-import realise from './'
-
 export default {
   check(thing) {
     return thing instanceof Promise;
