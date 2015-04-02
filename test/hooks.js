@@ -14,11 +14,11 @@ var hook = {
   }
 
 , async realise(thing, realise) {
-    if ( thing === Nothing ) {
-      return Nothing;
-    } else {
+    if ( thing.value ) {
       var value = await all(thing.value);
       return Just(value);
+    } else {
+      return Nothing;
     }
   }
 };
