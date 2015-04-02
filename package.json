@@ -2,9 +2,9 @@
   "name": "all",
   "version": "1.0.0",
   "description": "Create a promise from any javascript collection/map that contains Promises",
-  "main": "build.js",
+  "main": "build/index.js",
   "scripts": {
-    "compile": "babel index.js -o build.js",
+    "compile": "babel src -d build",
     "postinstall": "npm run compile",
     "test": "mocha --require babelhook"
   },
