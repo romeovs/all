@@ -6,23 +6,30 @@
   "scripts": {
     "compile": "babel src -d build",
     "postinstall": "npm run compile",
-    "test": "mocha --require babelhook"
+    "test": "npm run compile && mocha -r babelhook",
+    "coverage": "npm run compile && mocha -r babelhook -R html-cov >| coverage.html"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/romeovs/all.git"
   },
   "keywords": [
-    "promise"
-  , "immutable"
+    "promise",
+    "immutable"
   ],
   "author": "Romeo Van Snick <romeovs@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "babel": "^4.7.16",
+    "blanket": "^1.1.6",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "immutable": "^3.7.1",
     "mocha": "^2.2.1"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "build"
+    }
   }
 }

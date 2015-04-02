@@ -1,11 +1,6 @@
 'use strict';
-import chai from 'chai'
-import cas  from 'chai-as-promised'
-
-chai.use(cas);
-var expect = chai.expect;
-
-import all from '../src'
+import expect from './instrument'
+import all    from '../build'
 
 var mkPromise = function(val) {
   return Promise.resolve(val);

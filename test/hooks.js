@@ -1,9 +1,5 @@
 'use strict';
-import chai from 'chai'
-import cas  from 'chai-as-promised'
-
-chai.use(cas);
-var expect = chai.expect;
+import expect from './instrument'
 
 import all from '../src'
 import { Maybe, Just, Nothing } from './maybe'

@@ -1,11 +1,7 @@
 'use strict';
-import chai      from 'chai'
-import cas       from 'chai-as-promised'
+import expect from './instrument'
+
 import Immutable from 'immutable'
-
-chai.use(cas);
-var expect = chai.expect;
-
 import all from '../'
 
 var mkPromise = function(val) {
