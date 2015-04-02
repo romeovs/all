@@ -87,6 +87,12 @@ describe('arrays', function() {
       .and.eventually.deep.equal([1, 1, 1])
       .and.notify(done);
   });
+
+  it('should work for empty arrays', function(done) {
+    expect(all([])).to
+      .eventually.be.deep.equal([])
+      .and.notify(done);
+  });
 });
 
 describe('objects', function() {
@@ -127,6 +133,13 @@ describe('objects', function() {
       .and.notify(done);
   });
 
+
+  it('should work for empty objects', function(done) {
+    expect(all({})).to
+      .be.fulfilled
+      .and.eventually.be.deep.equal({})
+      .and.notify(done);
+  });
 });
 
 var ids = 'abcdefghijk';

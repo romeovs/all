@@ -41,6 +41,22 @@ var mapLike = function(name) {
         .and.eventually.satisfy(function(res) { return Immutable.is(res, value) })
         .and.notify(done);
     });
-  });
 
+    it('should work for empty immutable', function(done) {
+
+      var empty = Immutable[name]();
+      expect(all(empty)).to
+        .to.be.fulfilled
+        .and.eventually.be.an.instanceof(Immutable[name])
+        .and.eventually.satisfy(function(res) { return Immutable.is(res, empty) })
+        .and.notify(done);
+    });
+
+    it('should work for empty immutable', function(done) {
+      var imm = mapLike(name) ? {a: Promise.reject('FAIL')} : [Promise.reject('FAIL')];
+      expect(all(imm)).to
+        .eventually.be.rejectedWith('FAIL')
+        .and.notify(done);
+    });
+  });
 });
