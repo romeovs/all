@@ -85,6 +85,31 @@ it just knows to deal with these values by detecting them trough duck-typing and
 knowing how to iterate trough them.  Facebook has done a great job on keeping
 the API simple and general!
 
+## Hooks
+You can add support for your custom data-type by calling `all.addHook(hook)`.
+A hook looks like this:
+
+```js
+{
+  check: function(thing) {
+    // return true if hook applies to thing,
+    // false if otherwise
+    return isMyCustomType(thing);
+  }
+, realise: function(thing, realise) {
+    // return promise that resolves to
+    // realised thing, perhaps using the realise
+    // parameter to realise parts of thing
+    return Promise.resolve(thing);
+  }
+}
+
+Check the hook I wrote in [test for
+hooks](https://github.com/romeovs/all/blob/master/test/hooks.js#L11-L24)
+that implements `all` for the
+[`Maybe`](https://github.com/romeovs/all/blob/master/test/maybe.js) data-type.
+
+
 ## Todo
 
   - add support for resolving promises that are returned from promises.
@@ -98,5 +123,4 @@ the API simple and general!
 
   - use better generative testing framework
   - add test coverage
-  - add support for custom types
 
