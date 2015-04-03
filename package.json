@@ -6,8 +6,8 @@
   "scripts": {
     "compile": "babel src -d build",
     "postinstall": "npm run compile",
-    "test": "npm run compile && mocha -r babelhook",
-    "coverage": "npm run compile && mocha -r babelhook -R html-cov >| coverage.html"
+    "test": "mocha -r babelhook",
+    "coverage": "mocha -r babelhook -R json-cov >| coverage.json"
   },
   "repository": {
     "type": "git",
