@@ -4,7 +4,7 @@ var isObject = function(val) {
 };
 
 // resolves all promises in object
-var realiseObject = function (object, realise) {
+var realiseObject = function (object, all) {
   return new Promise(function(resolve, reject) {
     var keys    = Object.keys(object);
     var pending = keys.length;
@@ -18,7 +18,7 @@ var realiseObject = function (object, realise) {
     keys
       .forEach(function(key) {
         // recursivly realize the promise at each key
-        realise(object[key])
+        all(object[key])
           // save the result
           .then(function(res) {
             results[key] = res;

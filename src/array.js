@@ -5,7 +5,7 @@ export default {
   }
 
   // realise everything in array
-, realise(thing, realise) {
-    return Promise.all(thing.map(realise));
+, realise(thing, all) {
+    return Promise.all(thing.map(all));
   }
 };

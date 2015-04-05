@@ -3,7 +3,7 @@ export default {
     return thing instanceof Promise;
   }
 
-, realise(thing, realise) {
+, realise(thing, all) {
     return thing;
   }
 };

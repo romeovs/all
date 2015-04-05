@@ -4,7 +4,7 @@ var isImmutable = function(val) {
 };
 
 // realise everything in object
-var realiseImmutable = function(imm, realise) {
+var realiseImmutable = function(imm, all) {
   return new Promise(function(resolve, reject) {
     var pending = imm.size;
     var results = imm.clear();
@@ -26,7 +26,7 @@ var realiseImmutable = function(imm, realise) {
 
     imm
       .forEach(function(val, key) {
-        realise(val)
+        all(val)
           .then(function(res) {
             results = setter(key, res);
             if ( --pending === 0 ) {
