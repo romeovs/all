@@ -7,7 +7,8 @@
     "compile": "babel src -d build",
     "postinstall": "npm run compile",
     "test": "mocha -r babelhook",
-    "coverage": "mocha -r babelhook -R json-cov >| coverage.json"
+    "coverage": "mocha -r babelhook  -R json-cov >| coverage.json",
+    "hcoverage": "mocha -r babelhook -R html-cov >| coverage.html"
   },
   "repository": {
     "type": "git",
