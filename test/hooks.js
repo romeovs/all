@@ -52,4 +52,25 @@ describe('Hooks', function() {
     }).to.throw(/invalid hook/)
     done();
   });
+
+  it('should catch faulty hooks', function(done) {
+    var ok = true;
+    all.addHook({
+      check: function() {
+        if ( ok ) {
+          ok = false;
+          throw 'FAIL';
+        }
+        return false
+      }
+    , realise: function() {
+
+      }
+    });
+
+    expect(all([])).to
+      .be.rejectedWith('FAIL')
+      .and.notify(done);
+
+  });
 });
