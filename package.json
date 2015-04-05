@@ -22,7 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel": "^4.7.16",
-    "blanket": "^1.1.6",
+    "blanket": "git://github.com/alex-seville/blanket",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "coveralls": "^2.11.2",
@@ -34,8 +34,5 @@
     "blanket": {
       "pattern": "build"
     }
-  },
-  "dependencies": {
-    "blanket": "git://github.com/alex-seville/blanket"
   }
 }
