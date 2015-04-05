@@ -11,3 +11,7 @@ install:
 script:
   - npm run test
   - npm run coverage
+
+
+notifications:
+  email: false
