@@ -1,5 +1,5 @@
-// import blanket from 'blanket'
-// blanket();
+import blanket from 'blanket'
+blanket();
 
 import chai from 'chai'
 import cas  from 'chai-as-promised'

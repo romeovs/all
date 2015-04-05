@@ -7,7 +7,7 @@
     "compile": "babel src -d build",
     "postinstall": "npm run compile",
     "test": "mocha -r babelhook",
-    "coverage": "mocha -r babelhook  -R json-cov >| coverage.json",
+    "coverage": "mocha -r babelhook -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
     "hcoverage": "mocha -r babelhook -R html-cov >| coverage.html"
   },
   "repository": {
@@ -25,8 +25,10 @@
     "blanket": "^1.1.6",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
+    "coveralls": "^2.11.2",
     "immutable": "^3.7.1",
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "mocha-lcov-reporter": "0.0.2"
   },
   "config": {
     "blanket": {
