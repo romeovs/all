@@ -1,6 +1,6 @@
 import expect from './instrument'
 
-import all from '../src'
+import all from '../build'
 import { Maybe, Just, Nothing } from './maybe'
 
 var hook = {

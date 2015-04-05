@@ -1,7 +1,7 @@
 import expect from './instrument'
 
 import Immutable from 'immutable'
-import all from '../'
+import all from '../build'
 
 var mkPromise = function(val) {
   return Promise.resolve(val);
