@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.12"
+  - "0.11"
+  - "iojs"
+
+install:
+  - npm install
+  - npm build
+
+script:
+  - npm run test
+  - npm run coverage
