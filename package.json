@@ -34,5 +34,8 @@
     "blanket": {
       "pattern": "build"
     }
+  },
+  "dependencies": {
+    "blanket": "git://github.com/alex-seville/blanket"
   }
 }
