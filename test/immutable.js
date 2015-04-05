@@ -52,7 +52,7 @@ var mapLike = function(name) {
         .and.notify(done);
     });
 
-    it('should work for empty immutable', function(done) {
+    it('should reject when something rejects', function(done) {
       var imm = mapLike(name) ? {a: Promise.reject('FAIL')} : [Promise.reject('FAIL')];
       expect(all(imm)).to
         .eventually.be.rejectedWith('FAIL')
