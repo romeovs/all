@@ -1,16 +1,15 @@
 language: node_js
 node_js:
   - "0.12"
-  - "0.11"
-  - "iojs"
+  # - "0.11"
+  # - "iojs"
 
 install:
   - npm install
   - npm build
 
 script:
-  - echo "OK"
-  - echo "koel"
+  - npm test
 
 
 notifications:
