@@ -21,7 +21,7 @@ all(nested)
   .then(function(res) {
     // res will equal:
     // {
-    // a: 'a'
+    //   a: 'a'
     // , b: [1, 'b', 3]
     // , c: 'c'
     // }
