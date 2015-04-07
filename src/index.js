@@ -19,7 +19,7 @@ var realise = function(thing) {
       if ( hook.check(thing) ) {
         return hook.realise(thing, realise);
       }
-    };
+    }
   } catch( err ) {
     return Promise.reject(err);
   }

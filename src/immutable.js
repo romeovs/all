@@ -20,7 +20,6 @@ var realiseImmutable = function(imm, all) {
         return results.add(val);
       } else {
         reject(new Error(`unknown adder for Immutable of type ${typeof imm}`));
-        return;
       }
     };
 

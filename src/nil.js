@@ -3,7 +3,7 @@ export default {
     return thing === undefined || thing === null;
   }
 
-, realise(thing, all) {
+, realise(thing) {
     return Promise.resolve(thing);
   }
 };

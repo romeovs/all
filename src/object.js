@@ -1,6 +1,6 @@
 // wether or not something is a plain object
 var isObject = function(val) {
-  return val && '[object Object]' === val.toString();
+  return val && val.toString() === '[object Object]';
 };
 
 // resolves all promises in object
