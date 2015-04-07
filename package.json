@@ -8,7 +8,7 @@
     "postinstall": "npm run compile",
     "test": "mocha -r babelhook",
     "coverage": "mocha -r babelhook -r blanket -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
-    "hcoverage": "mocha -r babelhook -r blanket -R html-cov >| coverage.html"
+    "hcoverage": "mocha -r hook -R html-cov >| coverage.html"
   },
   "repository": {
     "type": "git",
@@ -26,13 +26,15 @@
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "coveralls": "^2.11.2",
+    "gulp": "^3.8.11",
+    "gulp-eslint": "^0.8.0",
     "immutable": "^3.7.1",
     "mocha": "^2.2.1",
     "mocha-lcov-reporter": "0.0.2"
   },
   "config": {
     "blanket": {
-      "pattern": "build"
+      "pattern": "src"
     }
   }
 }
