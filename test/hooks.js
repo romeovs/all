@@ -1,7 +1,7 @@
 import expect from './instrument'
 
 import all from '../build'
-import { Maybe, Just, Nothing } from './maybe'
+import { Maybe, just, nothing } from './maybe'
 
 var hook = {
   check(thing) {
@@ -11,9 +11,9 @@ var hook = {
 , async realise(thing) {
     if ( thing.value ) {
       var value = await all(thing.value);
-      return Just(value);
+      return just(value);
     } else {
-      return Nothing;
+      return nothing;
     }
   }
 };
@@ -28,7 +28,7 @@ describe('Hooks', function() {
       return;
     }
 
-    var m = Just(Promise.resolve(10));
+    var m = just(Promise.resolve(10));
     expect(all(m)).to
       .to.be.fulfilled
       .and.eventually.have.property('value')
@@ -38,11 +38,11 @@ describe('Hooks', function() {
 
   it('should work recursivly', function(done) {
     all.addHook(hook);
-    var m = Just([1, Promise.resolve(2), Promise.resolve(Just(3))]);
+    var m = just([1, Promise.resolve(2), Promise.resolve(just(3))]);
     expect(all(m)).to
       .to.be.fulfilled
       .and.eventually.have.property('value')
-        .that.deep.equals([1, 2, Just(3)])
+        .that.deep.equals([1, 2, just(3)])
       .and.notify(done);
   });
 

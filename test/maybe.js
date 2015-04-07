@@ -7,7 +7,6 @@ class Nothing extends Maybe {
 }
 
 var nothing = new Nothing();
-export { nothing as Nothing };
 
 class Just extends Maybe {
   constructor(a) {
@@ -23,4 +22,4 @@ var just = function(val) {
   return new Just(val);
 };
 
-export { just as Just };
+export { just, nothing };
