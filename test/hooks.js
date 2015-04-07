@@ -9,7 +9,7 @@ var hook = {
   }
 
 , async realise(thing) {
-    if ( thing.value ) {
+    if ( thing instanceof Maybe.Just ) {
       var value = await all(thing.value);
       return just(value);
     } else {
