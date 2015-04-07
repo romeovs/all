@@ -4,14 +4,6 @@ var gulp = require('gulp')
   , path = require('path')
   , lint = require('gulp-eslint')
 
-var project = {
-  paths: {
-    js: [
-      'src/*.js'
-    ]
-  }
-}
-
 var options = { };
 
 // LINT <<
@@ -21,7 +13,7 @@ options.eslint = {
 
 gulp.task('lint', function() {
   var strm =
-    gulp.src(project.paths.js)
+    gulp.src([ 'src/*.js', 'test/*.js' ])
       .pipe(lint(options.eslint))
       .pipe(lint.format());
 });
