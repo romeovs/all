@@ -8,7 +8,7 @@ var hook = {
     return thing instanceof Maybe;
   }
 
-, async realise(thing, realise) {
+, async realise(thing) {
     if ( thing.value ) {
       var value = await all(thing.value);
       return Just(value);
@@ -48,8 +48,8 @@ describe('Hooks', function() {
 
   it('should throw when invalid hooks are added', function(done) {
     expect(function() {
-      all.addHook({})
-    }).to.throw(/invalid hook/)
+      all.addHook({});
+    }).to.throw(/invalid hook/);
     done();
   });
 
@@ -61,7 +61,7 @@ describe('Hooks', function() {
           ok = false;
           throw 'FAIL';
         }
-        return false
+        return false;
       }
     , realise: function() {
 

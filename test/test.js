@@ -146,12 +146,13 @@ var ids = 'abcdefghijk';
 var max = 10;
 var createNested = function(depth, prom) {
   var random = Math.random();
-  var val, prom;
+  var val;
+  var v, p;
   if ( depth <= max ) {
     // create structure
     if ( !prom && random < 0.5 ) {
       // create promise
-      var [v, p] = createNested(depth, true);
+      [v, p] = createNested(depth, true);
       val  = v;
       prom = mkPromise(p);
     } else if ( random < 0.75 ) {
@@ -159,8 +160,8 @@ var createNested = function(depth, prom) {
       var l = Math.round(Math.random() * 2);
       val  = new Array(l);
       prom = new Array(l);
-      for ( var i = 0; i < l; i++ ) {
-          var [v, p] = createNested(depth + 1, prom);
+      for ( let i = 0; i < l; i++ ) {
+          [v, p] = createNested(depth + 1, prom);
           val[i]  = v;
           prom[i] = p;
       }
@@ -168,8 +169,8 @@ var createNested = function(depth, prom) {
       // create object
       val  = {};
       prom = {};
-      for ( var i = 0; i < 2; i++ ) {
-        var [v, p] = createNested(depth + 1, prom);
+      for ( let i = 0; i < 2; i++ ) {
+        [v, p] = createNested(depth + 1, prom);
         prom[ids[i]] = p;
         val[ids[i]]  = v;
       }
@@ -177,7 +178,7 @@ var createNested = function(depth, prom) {
   } else {
     if ( !prom ) {
       // create promise
-      var [v, p] = createNested(depth, true);
+      [v, p] = createNested(depth, true);
       val  = v;
       prom = mkPromise(p);
     } else {
