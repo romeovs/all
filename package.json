@@ -22,6 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel": "^4.7.16",
+    "babel-eslint": "^2.0.2",
     "blanket": "git://github.com/alex-seville/blanket",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
