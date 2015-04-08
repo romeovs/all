@@ -1,9 +1,7 @@
-import expect from './instrument'
-import all    from '../build'
+import { expect, describe, it, lab } from './instrument'
+export { lab }
 
-var mkPromise = function(val) {
-  return Promise.resolve(val);
-};
+import all from '../src'
 
 describe('values', function() {
   it('should resolve numbers to numbers', function(done) {
@@ -81,7 +79,7 @@ describe('arrays', function() {
   });
 
   it('should should leave non-promise elements alone', function(done) {
-    var arr = [1, 1, mkPromise(1)];
+    var arr = [1, 1, Promise.resolve(1)];
 
     expect(all(arr)).to
       .and.eventually.deep.equal([1, 1, 1])
@@ -98,9 +96,9 @@ describe('arrays', function() {
 describe('objects', function() {
   it('should resolve all object keys', function(done) {
     var obj = {
-      a: mkPromise('a')
-    , b: mkPromise(1)
-    , c: mkPromise(true)
+      a: Promise.resolve('a')
+    , b: Promise.resolve(1)
+    , c: Promise.resolve(true)
     };
 
     expect(all(obj)).to
@@ -112,8 +110,8 @@ describe('objects', function() {
   it('should reject when one key rejects', function(done) {
     var obj = {
       a: Promise.reject('FAIL')
-    , b: mkPromise(1)
-    , c: mkPromise(true)
+    , b: Promise.resolve(1)
+    , c: Promise.resolve(true)
     };
 
     expect(all(obj)).to
@@ -124,7 +122,7 @@ describe('objects', function() {
   it('should leave non-promise elements alone', function(done) {
     var obj = {
       a: 1
-    , b: mkPromise(1)
+    , b: Promise.resolve(1)
     , c: undefined
     };
 
@@ -154,7 +152,7 @@ var createNested = function(depth, prom) {
       // create promise
       [v, p] = createNested(depth, true);
       val  = v;
-      prom = mkPromise(p);
+      prom = Promise.resolve(p);
     } else if ( random < 0.75 ) {
       // create array
       var l = Math.round(Math.random() * 2);
@@ -180,7 +178,7 @@ var createNested = function(depth, prom) {
       // create promise
       [v, p] = createNested(depth, true);
       val  = v;
-      prom = mkPromise(p);
+      prom = Promise.resolve(p);
     } else {
       // create value
       val = prom = 1;

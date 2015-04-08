@@ -1,6 +1,7 @@
-import expect from './instrument'
+import { expect, describe, it, lab } from './instrument'
+export { lab }
 
-import all from '../build'
+import all from '../src'
 import { Maybe, just, nothing } from './maybe'
 
 var hook = {

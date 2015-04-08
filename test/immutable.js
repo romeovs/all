@@ -1,7 +1,8 @@
-import expect from './instrument'
+import { expect, describe, it, lab } from './instrument'
+export { lab }
 
+import all from '../src'
 import Immutable from 'immutable'
-import all from '../build'
 
 var mapLike = function(name) {
   return [
