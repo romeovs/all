@@ -13,7 +13,7 @@ var realiseImmutable = function(imm, all) {
       resolve(imm);
     }
 
-    var setter
+    var setter;
     if ( results.set ) {
       setter = function(key, val) {
         return results.set(key, val);

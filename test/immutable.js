@@ -65,10 +65,10 @@ describe('Immutable', function() {
     var val = {
       asMutable: true
     , forEach(fn) {
-        fn(10)
+        fn(10);
       }
     , clear() {
-        return val
+        return val;
       }
     };
 
