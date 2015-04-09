@@ -13,15 +13,18 @@ var realiseImmutable = function(imm, all) {
       resolve(imm);
     }
 
-    var setter = function(key, val) {
-      if ( results.set ) {
+    var setter
+    if ( results.set ) {
+      setter = function(key, val) {
         return results.set(key, val);
-      } else if ( results.add ) {
+      };
+    } else if ( results.add ) {
+      setter = function(key, val) {
         return results.add(val);
-      } else {
-        reject(new Error(`unknown adder for Immutable of type ${typeof imm}`));
-      }
-    };
+      };
+    } else {
+      reject(new Error(`unkown Immutable setter for ${imm}`));
+    }
 
     imm
       .forEach(function(val, key) {
