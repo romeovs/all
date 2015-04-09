@@ -54,5 +54,26 @@ var mapLike = function(name) {
         .eventually.be.rejectedWith('FAIL')
         .and.notify(done);
     });
+
+  });
+});
+
+describe('Immutable', function() {
+  it('should not work on an unknown Immutable', function(done) {
+
+    // create bad immutable that will look like one
+    var val = {
+      asMutable: true
+    , forEach(fn) {
+        fn(10)
+      }
+    , clear() {
+        return val
+      }
+    };
+
+    expect(all(val)).to
+      .eventually.be.rejected
+      .and.notify(done);
   });
 });
