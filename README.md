@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/romeovs/all.svg?branch=master)](https://travis-ci.org/romeovs/all)
 [![Coverage Status](https://coveralls.io/repos/romeovs/all/badge.svg?branch=master)](https://coveralls.io/r/romeovs/all?branch=master)
-
+[![Dependencies](https://david-dm.org/romeovs/all.svg)](https://david-dm.org/romeovs/all)
 
 `all` provides a simple utility to create a promise
 from a nested structure that contains promises.
