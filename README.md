@@ -132,3 +132,6 @@ that implements `all` for the
   - use better generative testing framework
   - add test coverage
 
+
+### License
+This code is licensed under the [ISC license](./LICENSE)
