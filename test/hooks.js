@@ -1,4 +1,8 @@
-import { expect, describe, it, lab } from './instrument'
+import { expect } from './instrument'
+import Lab        from 'lab'
+
+var lab = Lab.script();
+var { describe, it } = lab;
 export { lab }
 
 import all from '../src'
