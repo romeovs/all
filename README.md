@@ -1,10 +1,10 @@
 # all
-
-[![Build Status](https://travis-ci.org/romeovs/all.svg?branch=master)](https://travis-ci.org/romeovs/all)
-[![Coverage Status](https://coveralls.io/repos/romeovs/all/badge.svg?branch=master)](https://coveralls.io/r/romeovs/all?branch=master)
-[![Dependencies](https://david-dm.org/romeovs/all.svg)](https://david-dm.org/romeovs/all)
-[![devDependencies](https://david-dm.org/romeovs/all/dev-status.svg)](https://david-dm.org/romeovs/all#info=devDependencies)
-[![Join the chat at https://gitter.im/romeovs/config](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/romeovs/all?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://img.shields.io/travis/romeovs/all.svg?style=flat-square)][travis]
+[![Coverage Status](https://img.shields.io/coveralls/romeovs/all.svg?style=flat-square)][coveralls]
+[![Dependencies](https://img.shields.io/david/romeovs/all.svg?style=flat-square)][david]
+[![devDependencies](https://img.shields.io/david/dev/romeovs/all.svg?style=flat-square)][david-dev]
+[![license](https://img.shields.io/badge/license-ISC-373737.svg?style=flat-square)][license]
+[![gitter](https://img.shields.io/badge/GITTER-join%20chat%20→-00d86e.svg?style=flat-square)][gitter]
 
 `all` provides a simple utility to create a promise
 from a nested structure that contains promises.
@@ -134,4 +134,11 @@ that implements `all` for the
 
 
 ### License
-This code is licensed under the [ISC license](./LICENSE)
+This code is licensed under the [ISC license][license]
+
+[travis]:    https://travis-ci.org/romeovs/all
+[coveralls]: https://coveralls.io/r/romeovs/all?branch=master
+[david]:     https://david-dm.org/romeovs/all#info=dependencies
+[david-dev]: https://david-dm.org/romeovs/all#info=devDependencies
+[gitter]:    https://gitter.im/romeovs/all?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[license]:   ./LICENSE
