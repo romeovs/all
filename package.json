@@ -22,13 +22,13 @@
   "license": "ISC",
   "devDependencies": {
     "babel": "^5.0.10",
-    "babel-eslint": "^2.0.2",
+    "babel-eslint": "^3.0.1",
     "babel-runtime": "^5.0.10",
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "coveralls": "^2.11.2",
     "gulp": "^3.8.11",
-    "gulp-eslint": "^0.8.0",
+    "gulp-eslint": "^0.9.0",
     "immutable": "^3.7.1",
     "lab": "^5.5.1"
   }

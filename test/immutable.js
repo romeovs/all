@@ -1,12 +1,12 @@
-import { expect } from './instrument'
-import Lab        from 'lab'
+import { expect } from './instrument';
+import Lab        from 'lab';
 
 var lab = Lab.script();
 var { describe, it } = lab;
-export { lab }
+export { lab };
 
-import all from '../src'
-import Immutable from 'immutable'
+import all from '../src';
+import Immutable from 'immutable';
 
 var mapLike = function(name) {
   return [

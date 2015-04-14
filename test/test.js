@@ -1,11 +1,11 @@
-import { expect } from './instrument'
-import Lab        from 'lab'
+import { expect } from './instrument';
+import Lab        from 'lab';
 
 var lab = Lab.script();
 var { describe, it } = lab;
-export { lab }
+export { lab };
 
-import all from '../src'
+import all from '../src';
 
 describe('values', function() {
   it('should resolve numbers to numbers', function(done) {

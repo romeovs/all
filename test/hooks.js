@@ -1,12 +1,12 @@
-import { expect } from './instrument'
-import Lab        from 'lab'
+import { expect } from './instrument';
+import Lab        from 'lab';
 
 var lab = Lab.script();
 var { describe, it } = lab;
-export { lab }
+export { lab };
 
-import all from '../src'
-import { Maybe, just, nothing } from './maybe'
+import all from '../src';
+import { Maybe, just, nothing } from './maybe';
 
 var hook = {
   check(thing) {

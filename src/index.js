@@ -1,8 +1,8 @@
-import array     from './array'
-import object    from './object'
-import immutable from './immutable'
-import nil       from './nil'
-import promise   from './promise'
+import array     from './array';
+import object    from './object';
+import immutable from './immutable';
+import nil       from './nil';
+import promise   from './promise';
 
 var hooks = [
   nil
