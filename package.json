@@ -4,11 +4,12 @@
   "description": "Create a promise from any javascript collection/map that contains Promises",
   "main": "build/index.js",
   "scripts": {
-    "compile": "babel src -d build",
+    "compile": "babel src -d build --optional runtime",
     "postinstall": "npm run compile",
     "test": "lab -T babel.js -S ",
     "coverage": "lab -T babel.js -S --coverage -r lcov | ./node_modules/.bin/coveralls",
-    "hcoverage": "lab -T babel.js -S --coverage -r html >| coverage.html && open coverage.html"
+    "hcoverage": "lab -T babel.js -S --coverage -r html >| coverage.html && open coverage.html",
+    "lint":        "eslint -c .eslintrc src/**.js"
   },
   "repository": {
     "type": "git",
