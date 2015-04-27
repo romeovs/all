@@ -1,5 +1,5 @@
 test:
   override:
-    - npm run test -- -r junit -o junit.xml
+    - npm run test -- -r junit -o "$CIRCLE_ARTIFACTS/junit.xml"
   post:
     - npm run coverage
