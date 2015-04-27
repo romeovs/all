@@ -1,5 +1,5 @@
 test:
   override:
-    - npm run test -- -r junit > junit.xml
+    - npm run test -- -r junit -o junit.xml
   post:
     - npm run coverage
