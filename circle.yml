@@ -1,5 +1,6 @@
 test:
   override:
-    - npm run test -- -r junit -o "$CIRCLE_ARTIFACTS/junit.xml"
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
+    - npm run test -- -r junit -o "$CIRCLE_TEST_REPORTS/junit/tests.xml"
   post:
     - npm run coverage
