@@ -7,9 +7,9 @@
     "compile": "babel src -d build --optional runtime",
     "postinstall": "npm run compile",
     "test": "lab -T babel.js -S ",
-    "coverage": "lab -T babel.js -S --coverage -r lcov | ./node_modules/.bin/coveralls",
+    "coverage": "lab -T babel.js -S --coverage -r lcov | ./node_modules/.bin/coveralls || true",
     "hcoverage": "lab -T babel.js -S --coverage -r html >| coverage.html && open coverage.html",
-    "lint":        "eslint -c .eslintrc src/**.js"
+    "lint": "eslint -c .eslintrc src/**.js"
   },
   "repository": {
     "type": "git",
