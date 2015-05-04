@@ -28,6 +28,7 @@
     "chai": "^2.2.0",
     "chai-as-promised": "^4.3.0",
     "coveralls": "^2.11.2",
+    "eslint": "^0.20.0",
     "immutable": "^3.7.1",
     "lab": "^5.7.0"
   }
